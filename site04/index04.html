@@ -4,19 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aposentaduria</title>
+    <title>Testes condicional</title>
 </head>
 <body>
-    <h1>Metodo 1 - contruçaõ consulta/guanavara</h1>
+    <h1>Metodo 1 - Contruçaõ consulta/guanavara</h1>
     <input type="number" name="txtv1" id="txtv1">
     <input type="button" value="Ok" onclick="Verificar()">
-    <h1>Metodo 2 - contrução consulta/libro</h1>
+    <h1>Metodo 2 - Contrução consulta/libro</h1>
     <input type="number" id="idade">
     <button onclick="aposentar()">Ok</button><br>
     <h1>Operadores Logicos</h1>
-    
+    <h2>&&</h2>
+    <input type="number" name="txtvid" id="txtvid"><br><br>
+    <input type="number" name="txtvsa" id="txtvsal">
+    <input type="button" value="Checar" onclick="checar()">
+    <h2>||</h2>
+    <p>Você é:<br>1. Gestante<br>2. Idoso<br>3. Deficiente<br>4. Nenhuma das opções acima<br>
+    <input type="number" name="txtvalor" id="txtvalor">
+    <input type="button" value="Verificar" onclick="verificar()">
+
+    </p>
     <script>
-        function Verificar(){
+        function Verificar(){/*FUNCION DO METODO 1*/
             var txtn1 = document.getElementById('txtv1')
             var idade = Number(txtn1.value)
             if (idade >= 65) {
@@ -25,12 +34,30 @@
                 alert("Você tem " + idade + " anos. Infelizmente você não tem a idade suficiente para se aposentar. Esta lhe faltando " +(65-idade)+" anos para se aposentar")
             }
         }
-        function aposentar(){
+        function aposentar(){/*FUNCIONA METODO 2*/
             var idade = parseInt(document.getElementById('idade').value)
             if (idade >= 65) 
                 alert("Parabens, você ja pode ser aposentar")
              else 
                 alert("Ainda falta " + (65-idade) +" ano(s) para se aposentar")
+        }
+        function checar(){
+            var idade = parseInt(document.getElementById('txtvid').value)
+            var salario = parseFloat(document.getElementById('txtvsal').value)
+            if (idade > 17 && salario > 2000) {
+                alert("Voce esta apto para paraticipar do consorcio")
+            } else {
+                alert("Você NÃO esta apto para participar do consorcio")
+            }
+
+        }
+        function verificar(){
+            var op = parseInt(document.getElementById('txtvalor').value)
+            if ((op==1||op==2||op==3)) {
+                alert("Você têm direito a fila preferencial")
+            } else {
+                alert("Você NÃO têm direito a fila preferebcial")
+            }
         }
 
     </script>
