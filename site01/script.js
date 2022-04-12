@@ -1,6 +1,5 @@
-
 function mostraData(){
-    window.document.getElementById("fecha").innerHTML=Date()
+    window.document.getElementById("fecha").innertext=Date()
 }
 function mostraMensagem(){
     alert('Ola mundo')

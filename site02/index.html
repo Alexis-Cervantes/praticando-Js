@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estructuras Condiciais</title>
+    <h1>Trabajando con input do html</h1>
+    <input id="textinput" name="textinput" value="" type="text">
+    <button onclick="enviar()">Confirmar</button>
+    <script type="text/javascript">
+      function enviar(){
+        var valor = document.getElementById('textinput').value
+        alert('Você digitou: '+ valor)
+      }
+      </script>
+      <marquee behavior="slide" scrollamount="10">Este es un texto de amor y cariño para mi mismo. Se que la lucha es grande y se que has pasado por muchas cosas en esta vida, pero no te des ór vencido. Falta poco para que obtengas tus onjetivos en esta existencia. No me refiero a lo material, me refiero a lo espirtual...<br></marquee>
+      Vamos que vamos<br>
+  </head>
+  <body>
+    <h1>Operadores de comparação</h1>
+    <hr width="450" align="left">
+    <input type="number" name="vigual1" id="vigual1"> == <!--IGUALDAD-->
+    <input type="number" name="vigual2" id="vigual2">
+    <input type="button" value="Comparar" onclick="comparaIg()"><br><br>
+    <input type="number" name="vdif1" id="vdif1"> != <!--DIFERENTE QUE-->
+    <input type="number" name="vdif2" id="vdif2">
+    <input type="button" value="Comparar" onclick="comparaDif()"><br><br>
+    <input type="number" name="vmaio1" id="vmaior1"> > <!--MAYOR QUE-->
+    <input type="number" name="vmaior2" id="vmaior2">
+    <input type="button" value="Comparar" onclick="comparaMq()"><br><br>
+    <input type="number" name="vmiq1" id="vmiq1"> >= <!--MAYOR IGUAL QUE-->
+    <input type="number" name="vmiq2" id="vmiq2">
+    <input type="button" value="Comparar" onclick="comparaMiq()"><br><br>
+    <input type="number" name="vmenor1" id="vmenor1"> < <!--MENOR QUE-->
+    <input type="number" name="vmenor2" id="vmenor2">
+    <input type="button" value="Comparar" onclick="comparaMnq()"><br><br>
+    <input type="number" name="vmniq1" id="vmniq1"> <= <!--MENOR IGUAL QUE-->
+    <input type="number" name="vmniq2" id="vmniq2">
+    <input type="button" value="Comparar"onclick="comparaMniq()">
+    <hr width="450" align="left">
+    <script>
+      function comparaIg(){
+        var v1 = document.getElementById('vigual1')
+        var v2 = document.getElementById('vigual2')
+        var n1 = Number(v1.value)
+        var n2 = Number(v2.value)
+        var op = n1==n2
+        alert(op)
+      }
+      function comparaDif(){
+        var v1 = document.getElementById('vdif1')
+        var v2 = document.getElementById('vdif2')
+        var n1 = Number(v1.value)
+        var n2 = Number(v2.value)
+        var op = n1!=n2
+        alert(op)
+      }
+      function comparaMq(){
+        var v1 = document.getElementById('vmaior1')
+        var v2 = document.getElementById('vmaior2')
+        var n1 = Number(v1.value)
+        var n2 = Number(v2.value)
+        var op = n1>n2
+        alert(op)
+      }
+      function comparaMiq(){
+        var v1 = document.getElementById('vmiq1')
+        var v2 = document.getElementById('vmiq2')
+        var n1 = Number(v1.value)
+        var n2 = Number(v2.value)
+        var op = n1>=n2
+        alert(op)
+      }
+      function comparaMnq(){
+        var v1 = document.getElementById('vmenor1')
+        var v2 = document.getElementById('vmenor2')
+        var n1 = Number(v1.value)
+        var n2 = Number(v2.value)
+        op = n1<n2
+        alert(op)
+      }
+      function comparaMniq(){
+        var v1 = document.getElementById('vmniq1')
+        var v2 = document.getElementById('vmniq2')
+        var n1 = Number(v1.value)
+        var n2 = Number(v2.value)
+        var op = n1<=n2
+        alert(op)
+      }
+    </script>
+
+  </body>
+</html>

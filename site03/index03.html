@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If e Else - password</title>
+</head>
+<body>
+    <input type="password" name="Clave" id="clave">
+    <button onclick="login()">Entrar</button><br>
+    <script>
+        var senha = '2112'
+        function login (){
+            var tentativa = document.getElementById("clave").value
+            if (tentativa==senha) {
+                alert("Seja Benvindo, entrando no sistama")
+            } else {
+                alert("Senha incorrecta, tente de novo")
+            }
+        }
+    </script>
+    
+</body>
+</html>

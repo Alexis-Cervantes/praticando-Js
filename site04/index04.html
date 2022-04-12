@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aposentaduria</title>
+</head>
+<body>
+    <h1>Metodo 1 - contruçaõ consulta/guanavara</h1>
+    <input type="number" name="txtv1" id="txtv1">
+    <input type="button" value="Ok" onclick="Verificar()">
+    <h1>Metodo 2 - contrução consulta/libro</h1>
+    <input type="number" id="idade">
+    <button onclick="aposentar()">Ok</button><br>
+    <h1>Operadores Logicos</h1>
+    
+    <script>
+        function Verificar(){
+            var txtn1 = document.getElementById('txtv1')
+            var idade = Number(txtn1.value)
+            if (idade >= 65) {
+                alert("Você tem " + idade +" anos. Parabens você ja pode se aposentar")
+            } else {
+                alert("Você tem " + idade + " anos. Infelizmente você não tem a idade suficiente para se aposentar. Esta lhe faltando " +(65-idade)+" anos para se aposentar")
+            }
+        }
+        function aposentar(){
+            var idade = parseInt(document.getElementById('idade').value)
+            if (idade >= 65) 
+                alert("Parabens, você ja pode ser aposentar")
+             else 
+                alert("Ainda falta " + (65-idade) +" ano(s) para se aposentar")
+        }
+
+    </script>
+    
+</body>
+</html>
