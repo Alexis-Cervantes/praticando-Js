@@ -8,6 +8,7 @@
 </head>
 <body>
     <H1>Raio, Perimetro e Area de uma circunferencia</H1>
+    <p>Programa que solicita o valor do Raio da circunferencia e enseguida mostra a medida da circunferencia e a area do circulo:</p>
         <input type="number" name="txtvr" id="txtvr">
         <input type="button" value="Calcular" onclick="calcular()">
         <div id="raio">Raio:</div>
@@ -15,14 +16,18 @@
         <div id="area">Area:</div>
     
     <h1>Celsius para fahrenheit</h1>
+    <p>Digite un valor em Celsius:</p>
         <input type="number" name="txtvc" id="txtvc">
         <input type="button" value="convertir" onclick="convFahrenheit()">
-        <div id="tempf">Fahrenheit</div>
+        <div id="tempf">Fahrenheit:</div>
     <h1>Fahrenheit para Celsius</h1>
+    <p>Digite um valor em Fahrenheit:</p>
         <input type="number" name="txtvf" id="txtvf">
         <input type="button" value="convertir" onclick="convCelsius()">
-        <div id="tempc">Celsius</div>
+        <div id="tempc">Celsius:</div>
     <h1>Computador de bordo</h1>
+    <h3>Dados:<br> O carro faz 20Km com 01 Lt de combustivel<br>01 Lt de combustivel= R$ 5,00</h3>
+    <p>Digite a quantidade de dinhero com que vc conta:</p>
         <input type="number" name="txtvd" id="txtvd">
         <input type="button" value="dindin" onclick="calcConsumo()">
         <div id="qtosltrs">Litros de gasolina que pode comprar</div>
@@ -30,42 +35,41 @@
     <script>
         function calcular(){
             var pi = Math.PI.toFixed(2)
-            var vr = window.document.getElementById('txtvr')
+            var raio = window.document.getElementById('txtvr')
             var resraio = window.document.getElementById('raio')
             var rescf = window.document.getElementById('cf')
             var resarea = window.document.getElementById('area')
-            var ra = Number(vr.value) 
-            var cir = 2*pi*ra
-            var ar = pi*(Math.pow(ra,2))
-            resraio.innerText = `Se o Raio é ${ra.toFixed(2)}` 
+            raio = Number(raio.value) 
+            var cir = 2*pi*raio
+            var area = pi*(Math.pow(raio,2))
+            resraio.innerText = `Se o Raio é ${raio.toFixed(2)}` 
             rescf.innerText = `O perimetro da circunferencia é: ${cir.toFixed(2)}`
-            resarea.innerText = `A araea da circunferencia é: ${ar.toFixed(2)} ao quadrado`
+            resarea.innerText = `A araea da circunferencia é: ${area.toFixed(2)} ao quadrado`
         }
         function convFahrenheit(){
-            var vc = window.document.getElementById('txtvc')
+            var celsius = window.document.getElementById('txtvc')
             var resf = window.document.getElementById('tempf')
-            var c = Number(vc.value)
-            var f = c*(9/5)+32
-            resf.innerText = f
+            celsius = Number(celsius.value)
+            var fahrenheit = celsius*(9/5)+32
+            resf.innerText = fahrenheit
         }
         function convCelsius(){
-            var vf = window.document.getElementById('txtvf')
+            var fahrenheit = window.document.getElementById('txtvf')
             var resc = window.document.getElementById('tempc')
-            var f = Number(vf.value)
-            var c = (5/9)*(f-32)
-            resc.innerText = c
+            fahrenheit = Number(fahrenheit.value)
+            var celsius = (5/9)*(fahrenheit-32)
+            resc.innerText = celsius
         }
         function calcConsumo(){
-            var l = 5.00
+            var litro = 5.00
             var dinero = document.getElementById('txtvd')
-            var quatLitrComp = document.getElementById('qtosltrs')
-            var kmPodePerc = document.getElementById('perc')
-            var d = Number(dinero.value)
-            var qlc = d/l
+            var quatLitrCom = document.getElementById('qtosltrs')
+            var quatKmsPer = document.getElementById('perc')
+            dinero = Number(dinero.value)
+            var qlc = dinero/litro
             var qkp = qlc*20
-            quatLitrComp.innerText = `Você pode comprar ${qlc} litros de combustivel`
-            kmPodePerc.innerText = `Você pode percorrer ${qkp} kilometros`
-
+            quatLitrCom.innerText = `Você pode comprar ${qlc} litros de combustivel`
+            quatKmsPer.innerText = `Você pode percorrer ${qkp} kilometros`
         }
     </script>
 </body>

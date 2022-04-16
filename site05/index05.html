@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>condiciones</title>
+  </head>
+  <body>
+    <h1>Switch</h1>
+    <h2>Programa que solicita um numero e mostra o mes correspondiente</h2>
+    <p>Exemplo: Se digitamos 6 o programa mostrara o mes de Junho</p>
+    <input type="number" name="txtvm" id="txtvm" />
+    <input type="button" value="Exibir mês" onclick="exibir()"/>
+    <script>
+        function exibir(){
+            var mes = parseInt(document.getElementById('txtvm').value)
+            switch (mes) {
+                case 1: alert("Janeiro")
+                break
+                case 2: alert("Fevereiro")
+                break
+                case 3: alert("Março")
+                break
+                case 4: alert("Abril")
+                break
+                case 5: alert("Maio")
+                break
+                case 6: alert("Junho")
+                break
+                case 7: alert("Julho")
+                break
+                case 8: alert("Agosto")
+                break
+                case 9: alert("Setembro")
+                break
+                case 10: alert("Outobro")
+                break
+                case 11: alert("Novembro")
+                break
+                case 12: alert("Dezembro")
+                break
+                default: alert("Parametro não reconhecido. Digite um valor do 1 até 12")
+            }
+        }
+
+    </script>
+  </body>
+</html>

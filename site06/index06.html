@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios com If-else</title>
+</head>
+<body>
+    <h1>Verificar se a letra digitada é maiuscula ou minuscula</h1>
+    <input type="text" name="txtltd" id="txtld">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <script>
+        function verificar(){
+            var letra = document.getElementById('txtld').value
+            letra = letra.toLowerCase()
+            if (letra =='a'||letra =='e'||letra =='i'||letra =='o'||letra =='u') {
+                alert("Vogal")
+            } else {
+                alert("Consoante")
+            }
+        }
+    </script>
+</body>
+</html>
