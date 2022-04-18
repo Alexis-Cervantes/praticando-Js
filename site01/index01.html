@@ -1,76 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculos</title>
-</head>
-<body>
-    <H1>Raio, Perimetro e Area de uma circunferencia</H1>
-    <p>Programa que solicita o valor do Raio da circunferencia e enseguida mostra a medida da circunferencia e a area do circulo:</p>
-        <input type="number" name="txtvr" id="txtvr">
-        <input type="button" value="Calcular" onclick="calcular()">
-        <div id="raio">Raio:</div>
-        <div id="cf">Circunferencia:</div>
-        <div id="area">Area:</div>
-    
+  </head>
+  <body>
+    <h1>Raio, Perimetro e Area de uma circunferencia</h1>
+    <p>
+      Programa que solicita o valor do Raio da circunferencia e enseguida mostra
+      a medida da circunferencia e a area do circulo:
+    </p>
+    <input type="number" name="txtvr" id="txtvr" />
+    <input type="button" value="Calcular" onclick="calcular()" />
+    <div id="raio">Raio:</div>
+    <div id="cf">Circunferencia:</div>
+    <div id="area">Area:</div>
+    <hr>
     <h1>Celsius para fahrenheit</h1>
     <p>Digite un valor em Celsius:</p>
-        <input type="number" name="txtvc" id="txtvc">
-        <input type="button" value="convertir" onclick="convFahrenheit()">
-        <div id="tempf">Fahrenheit:</div>
+    <input type="number" name="txtvc" id="txtvc" />
+    <input type="button" value="convertir" onclick="convFahrenheit()" />
+    <div id="tempf">Fahrenheit:</div>
     <h1>Fahrenheit para Celsius</h1>
     <p>Digite um valor em Fahrenheit:</p>
-        <input type="number" name="txtvf" id="txtvf">
-        <input type="button" value="convertir" onclick="convCelsius()">
-        <div id="tempc">Celsius:</div>
+    <input type="number" name="txtvf" id="txtvf" />
+    <input type="button" value="convertir" onclick="convCelsius()" />
+    <div id="tempc">Celsius:</div>
+    <hr>
     <h1>Computador de bordo</h1>
-    <h3>Dados:<br> O carro faz 20Km com 01 Lt de combustivel<br>01 Lt de combustivel= R$ 5,00</h3>
+    <h3>
+      Dados:<br />
+      O carro faz 20Km com 01 Lt de combustivel<br />01 Lt de combustivel= R$
+      5,00
+    </h3>
     <p>Digite a quantidade de dinhero com que vc conta:</p>
-        <input type="number" name="txtvd" id="txtvd">
-        <input type="button" value="dindin" onclick="calcConsumo()">
-        <div id="qtosltrs">Litros de gasolina que pode comprar</div>
-        <div id="perc">Kilometros que pode percorrer com esse combustivel</div>
+    <input type="number" name="txtvd" id="txtvd" />
+    <input type="button" value="dindin" onclick="calcConsumo()" />
+    <div id="qtosltrs">Litros de gasolina que pode comprar</div>
+    <div id="perc">Kilometros que pode percorrer com esse combustivel</div>
     <script>
-        function calcular(){
-            var pi = Math.PI.toFixed(2)
-            var raio = window.document.getElementById('txtvr')
-            var resraio = window.document.getElementById('raio')
-            var rescf = window.document.getElementById('cf')
-            var resarea = window.document.getElementById('area')
-            raio = Number(raio.value) 
-            var cir = 2*pi*raio
-            var area = pi*(Math.pow(raio,2))
-            resraio.innerText = `Se o Raio é ${raio.toFixed(2)}` 
-            rescf.innerText = `O perimetro da circunferencia é: ${cir.toFixed(2)}`
-            resarea.innerText = `A araea da circunferencia é: ${area.toFixed(2)} ao quadrado`
-        }
-        function convFahrenheit(){
-            var celsius = window.document.getElementById('txtvc')
-            var resf = window.document.getElementById('tempf')
-            celsius = Number(celsius.value)
-            var fahrenheit = celsius*(9/5)+32
-            resf.innerText = fahrenheit
-        }
-        function convCelsius(){
-            var fahrenheit = window.document.getElementById('txtvf')
-            var resc = window.document.getElementById('tempc')
-            fahrenheit = Number(fahrenheit.value)
-            var celsius = (5/9)*(fahrenheit-32)
-            resc.innerText = celsius
-        }
-        function calcConsumo(){
-            var litro = 5.00
-            var dinero = document.getElementById('txtvd')
-            var quatLitrCom = document.getElementById('qtosltrs')
-            var quatKmsPer = document.getElementById('perc')
-            dinero = Number(dinero.value)
-            var qlc = dinero/litro
-            var qkp = qlc*20
-            quatLitrCom.innerText = `Você pode comprar ${qlc} litros de combustivel`
-            quatKmsPer.innerText = `Você pode percorrer ${qkp} kilometros`
-        }
+      function calcular() {
+        var pi = Math.PI.toFixed(2);
+        var raio = window.document.getElementById("txtvr");
+        var resraio = window.document.getElementById("raio");
+        var rescf = window.document.getElementById("cf");
+        var resarea = window.document.getElementById("area");
+        raio = Number(raio.value);
+        var cir = 2 * pi * raio;
+        var area = pi * Math.pow(raio, 2);
+        resraio.innerText = `Se o Raio é ${raio.toFixed(2)}`;
+        rescf.innerText = `O perimetro da circunferencia é: ${cir.toFixed(2)}`;
+        resarea.innerText = `A araea da circunferencia é: ${area.toFixed(
+          2
+        )} ao quadrado`;
+      }
+      function convFahrenheit() {
+        var celsius = window.document.getElementById("txtvc");
+        var resf = window.document.getElementById("tempf");
+        celsius = Number(celsius.value);
+        var fahrenheit = celsius * (9 / 5) + 32;
+        resf.innerText = fahrenheit;
+      }
+      function convCelsius() {
+        var fahrenheit = window.document.getElementById("txtvf");
+        var resc = window.document.getElementById("tempc");
+        fahrenheit = Number(fahrenheit.value);
+        var celsius = (5 / 9) * (fahrenheit - 32);
+        resc.innerText = celsius;
+      }
+      function calcConsumo() {
+        var litro = 5.0;
+        var dinero = document.getElementById("txtvd");
+        var quatLitrCom = document.getElementById("qtosltrs");
+        var quatKmsPer = document.getElementById("perc");
+        dinero = Number(dinero.value);
+        var qlc = dinero / litro;
+        var qkp = qlc * 20;
+        quatLitrCom.innerText = `Você pode comprar ${qlc} litros de combustivel`;
+        quatKmsPer.innerText = `Você pode percorrer ${qkp} kilometros`;
+      }
     </script>
-</body>
+  </body>
 </html>

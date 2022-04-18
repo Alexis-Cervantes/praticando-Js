@@ -1,75 +1,95 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Testes condicional</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Metodo 1 - Contruçâo consulta/guanavara</h1>
-    <p>Programa que verifica a edad sufuciente para jubilarse</p>
-    <input type="number" name="txtv1" id="txtv1">
-    <input type="button" value="Ok" onclick="Verificar()">
+    <h4>Programa que verifica a edad sufuciente para jubilarse</h4>
+    <input type="number" name="txtv1" id="txtv1" />
+    <input type="button" value="Ok" onclick="Verificar()" />
+    <hr />
     <h1>Metodo 2 - Contrução consulta/libro</h1>
-    <p>Programa que verifica a edad sufuciente para jubilarse. Pero con otro estilo de codigo</p>
-    <input type="number" id="idade">
-    <button onclick="aposentar()">Ok</button><br>
+    <h4>Programa que verifica a edad sufuciente para jubilarse</h4>
+    <input type="number" id="idade" />
+    <button onclick="aposentar()">Ok</button><br />
+    <hr />
     <h1>Operadores Logicos</h1>
-    <p>Usando &&: programa que verifica dos valores (idade e salario) para participar de um consorcio</p>
-    <input type="number" name="txtvid" id="txtvid"><br><br>
-    <input type="number" name="txtvsa" id="txtvsal">
-    <input type="button" value="Checar" onclick="checar()">
-    <p>Usando ||: programa que mostra se a pessoa esta dentro das opções</p>
-    <p>Você é:<br>1. Gestante<br>2. Idoso<br>3. Deficiente<br>4. Nenhuma das opções acima<br>
-    <input type="number" name="txtvalor" id="txtvalor">
-    <input type="button" value="Verificar" onclick="verificar()">
-    <p>Usando !: programa que nega</p>
-    <p>Menu:<br>0. Sair<br>1. Comprar<br>2. Vender<br>3. Trocar<br>4. Etc<br></p>
-    <input type="number" name="txtval" id="txtval">
-    <input type="button" value="Verificar" onclick="constatar()">
+    <h4>
+      Usando &&: programa que verifica dos valores (idade e salario) para
+      participar de um consorcio
+    </h4>
+    <input type="number" name="txtvid" id="txtvid" /><br /><br />
+    <input type="number" name="txtvsa" id="txtvsal" />
+    <input type="button" value="Checar" onclick="checar()" />
+    <h4>Usando ||: programa que mostra se a pessoa esta dentro das opções</h4>
+    <p>
+      <b>Você é</b>:<br />1. Gestante<br />2. Idoso<br />3. Deficiente<br />4. Nenhuma
+      das opções acima<br />
+      <input type="number" name="txtvalor" id="txtvalor" />
+      <input type="button" value="Verificar" onclick="verificar()" />
+    </p>
+
+    <h4>Usando !: programa que nega</h4>
+    <p>
+      <b>Menu</b>:<br />0. Sair<br />1. Comprar<br />2. Vender<br />3. Trocar<br />4.
+      Etc<br />
+    </p>
+    <input type="number" name="txtval" id="txtval" />
+    <input type="button" value="Verificar" onclick="constatar()" />
     <script>
-        function Verificar(){/*FUNCION DO METODO 1*/
-            var idade = document.getElementById('txtv1')
-            idade = Number(idade.value)
-            if (idade >= 65) {
-                alert("Você tem " + idade +" anos. Parabens você ja pode se aposentar")
-            } else {
-                alert("Você tem " + idade + " anos. Infelizmente você não tem a idade suficiente para se aposentar. Esta lhe faltando " +(65-idade)+" anos para se aposentar")
-            }
+      function Verificar() {
+        /*FUNCION DO METODO 1*/
+        var idade = document.getElementById("txtv1");
+        idade = Number(idade.value);
+        if (idade >= 65) {
+          alert(
+            "Você tem " + idade + " anos. Parabens você ja pode se aposentar"
+          );
+        } else {
+          alert(
+            "Você tem " +
+              idade +
+              " anos. Infelizmente você não tem a idade suficiente para se aposentar. Esta lhe faltando " +
+              (65 - idade) +
+              " anos para se aposentar"
+          );
         }
-        function aposentar(){/*FUNCIONA METODO 2*/
-            var idade = parseInt(document.getElementById('idade').value)
-            if (idade >= 65) 
-                alert("Parabens, você ja pode ser aposentar")
-             else 
-                alert("Ainda falta " + (65-idade) +" ano(s) para se aposentar")
+      }
+      function aposentar() {
+        /*FUNCIONA METODO 2*/
+        var idade = parseInt(document.getElementById("idade").value);
+        if (idade >= 65) alert("Parabens, você ja pode ser aposentar");
+        else alert("Ainda falta " + (65 - idade) + " ano(s) para se aposentar");
+      }
+      function checar() {
+        var idade = parseInt(document.getElementById("txtvid").value);
+        var salario = parseFloat(document.getElementById("txtvsal").value);
+        if (idade > 17 && salario > 2000) {
+          alert("Você esta apto para participar do consorcio");
+        } else {
+          alert("Você NÃO esta apto para participar do consorcio");
         }
-        function checar(){
-            var idade = parseInt(document.getElementById('txtvid').value)
-            var salario = parseFloat(document.getElementById('txtvsal').value)
-            if (idade > 17 && salario > 2000) {
-                alert("Você esta apto para participar do consorcio")
-            } else {
-                alert("Você NÃO esta apto para participar do consorcio")
-            }
+      }
+      function verificar() {
+        var op = parseInt(document.getElementById("txtvalor").value);
+        if (op == 1 || op == 2 || op == 3) {
+          alert("Você têm direito a fila preferencial");
+        } else {
+          alert("Você NÃO têm direito a fila preferebcial");
         }
-        function verificar(){
-            var op = parseInt(document.getElementById('txtvalor').value)
-            if ((op == 1||op == 2||op == 3)) {
-                alert("Você têm direito a fila preferencial")
-            } else {
-                alert("Você NÃO têm direito a fila preferebcial")
-            }
+      }
+      function constatar() {
+        var op = parseInt(document.getElementById("txtval").value);
+        if (!op) {
+          alert("Saindo do Sistema");
+        } else {
+          alert("Opção escolida: " + op);
         }
-        function constatar(){
-            var op = parseInt(document.getElementById('txtval').value)
-            if (!op) {
-                alert("Saindo do Sistema")
-            } else {
-                alert("Opção escolida: "+op)
-            }
-        }
+      }
     </script>
-</body>
+  </body>
 </html>
