@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercios jsprogresivo 2</title>
+</head>
+<body>
+    <h1>6.-Mostra tres numeros em ordem decrescente</h1>
+    <input type="number" name="nr1" id="nr1" onfocus="this.value=''">
+    <input type="number" name="nr2" id="nr2" onfocus="this.value=''">
+    <input type="number" name="nr3" id="nr3" onfocus="this.value=''">
+    <input type="button" value="Decrescendo" onclick="decrescer()">
+    <hr>
+    <h1>7.-Digita opcion e imprime saludo correspondiente</h1>
+    <p>Menu:<br>M-Matutino<br>V-vespertino<br>N-noturno
+    </p>
+    <input type="text" name="saludo" id="saludo" onfocus="this.value=''">
+    <input type="button" value="Saludo" onclick="saluditos()">
+    
+    <hr>
+    <h1>8.-Reajuste do salario</h1>
+    <p>Reajustes:<br>- Salários até R$ 280,00 incluindo : aumento de 20%.<br>-
+        salários entre R$ 280,00 e R$ 700,00 : aumento de 15%.<br>-
+        salários entre R$ 700,00 e R$ 1500,00 : aumento de 10%.<br>-
+        salários de R$ 1500,00 em diante : aumento de 5%</p>
+    <p>Digite quanto você persebe:</p>
+    
+    <input type="number" name="sal" id="sal" onfocus="this.value=''">
+    <input type="button" value="Reajuste" onclick="reajusteSalarial()">
+    <hr>
+    <script>
+        function decrescer(){
+            var n1 = parseInt(document.getElementById('nr1').value)
+            var n2 = parseInt(document.getElementById('nr2').value)
+            var n3 = parseInt(document.getElementById('nr3').value)
+            var aux = n1
+            
+            if(n2 > n1){
+                aux = n2
+                n2 = n1
+                n1 = aux
+            }if(n3 > n1){
+                aux = n3
+                n3 = n1
+                n1 = aux
+            }if(n3 > n2){
+                aux = n3
+                n3 = n2
+                n2 = aux
+            }
+
+            alert("A ordem decrescente é : " +n1+"  -  "+n2+"  -  "+n3)
+        }
+        function saluditos(){
+            var op = document.getElementById('saludo').value
+            op = op.toUpperCase()/*Este metodo transforma todas as letras digitadas em minusculas para MAIUSCULOS. E evitar dar error cuando o usuario digitar um carater em minusculo*/
+            if(op == 'M')
+                alert("Bom dia!!!")
+            else if(op == 'V')
+                alert("Boa tarde!!")
+            else if(op == 'N')
+                alert("Boa noite!")
+            else alert("Valor Invalido")
+        }
+        function reajusteSalarial(){
+            var salario = parseFloat(document.getElementById('sal').value)
+            var aumento
+            var novoSalario
+            if (salario <= 280) {
+                aumento = (salario*20/100)
+                novoSalario = salario + aumento
+                alert("- Salario antes do reajuste: "+salario.toFixed(2)+".\n- Percentual de aumento aplicado  de 20 %.\n- Valor do aumento: R$ "+aumento.toFixed(2)+".\n- Novo Salário, após o aumento: R$ "+novoSalario.toFixed(2))
+            }else if(salario > 280 && salario < 700){
+                aumento = (salario*15/100)
+                novoSalario = salario + aumento
+                alert("- Salario antes do reajuste: "+salario.toFixed(2)+".\n- Percentual de aumento aplicado  de 15 %.\n- Valor do aumento: R$ "+aumento.toFixed(2)+".\n- Novo Salário, após o aumento: R$ "+novoSalario.toFixed(2))
+            }else if (salario > 700 && salario < 1500){
+                aumento = (salario*10/100)
+                novoSalario = salario + aumento
+                alert("- Salario antes do reajuste: "+salario.toFixed(2)+".\n- Percentual de aumento aplicado  de 10 %.\n- Valor do aumento: R$ "+aumento.toFixed(2)+".\n- Novo Salário, após o aumento: R$ "+novoSalario.toFixed(2))
+            }else if(salario >= 1500){
+                aumento = (salario*5/100)
+                novoSalario = salario + aumento
+                alert("- Salario antes do reajuste: "+salario.toFixed(2)+".\n- Percentual de aumento aplicado  de 5 %.\n- Valor do aumento: R$ "+aumento.toFixed(2)+".\n- Novo Salário, após o aumento: R$ "+novoSalario.toFixed(2))
+            }    
+        }
+        
+
+
+    </script>    
+</body>
+</html>
