@@ -8,31 +8,31 @@
   </head>
   <body>
     <h1>1.-Verificar se a letra digitada é maiuscula ou minuscula</h1>
-    <input type="text" name="txtltd" id="txtld" />
+    <input type="text" name="txtltd" id="txtld" onfocus="this.value=''" />
     <input type="button" value="Verificar" onclick="verificar()" />
     <hr>
     <h1>2.-Media do Aluno</h1>
     <p>Digite a primeira nota:</p>
-    <input type="number" name="txn1" id="txn1" />
+    <input type="number" name="txn1" id="txn1" onfocus="this.value=''" />
     <p>Digitea segunda nota:</p>
-    <input type="number" name="txn2" id="txn2" />
+    <input type="number" name="txn2" id="txn2" onfocus="this.value=''"/>
     <input type="button" value="Calculando Media" onclick="media()" />
     <hr>
     <h1>3.-Qual dos tres numeros é o maior:</h1>
-    <input type="number" name="v1" id="v1">
-    <input type="number" name="v2" id="v2">
-    <input type="number" name="v3" id="v3">
+    <input type="number" name="v1" id="v1" onfocus="this.value=''">
+    <input type="number" name="v2" id="v2" onfocus="this.value=''">
+    <input type="number" name="v3" id="v3" onfocus="this.value=''">
     <input type="button" value="Numero Maior?" onclick="maior()">
     <hr>
     <h1>4.-Invertindo valores dos numeros digitados</h1>
-    <input type="number" name="txv1" id="txv1">
-    <input type="number" name="txv2" id="txv2">
+    <input type="number" name="txv1" id="txv1" onfocus="this.value=''">
+    <input type="number" name="txv2" id="txv2" onfocus="this.value=''">
     <input type="button" value="Inverter" onclick="inverter()">
     <hr>
     <h1>5.-Qual dos tres numeros é o maior e o menor</h1>
-    <input type="number" name="valor1" id="valor1">
-    <input type="number" name="valor2" id="valor2">
-    <input type="number" name="valor3" id="valor3">
+    <input type="number" name="valor1" id="valor1" onfocus="this.value=''">
+    <input type="number" name="valor2" id="valor2" onfocus="this.value=''">
+    <input type="number" name="valor3" id="valor3" onfocus="this.value=''">
     <input type="button" value="Maior & menor" onclick="maiorEmenor()">
     <script>
       function verificar(){
