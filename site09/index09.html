@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios IV</title>
+</head>
+<body>
+    <h1>16.-Numero par ou impar</h1>
+    <input type="number" name="num1" id="num1" onfocus="this.value=''" placeholder="Digite um valor enteiro">
+    <input type="button" value="Par o Impar" onclick="determinar()">
+    <hr>
+    <script>
+        function determinar(){
+            var valor = parseInt(document.getElementById('num1').value)
+            if (valor % 2 == 0) {
+                alert(`O numero digitado é ${valor}. E é Par`)
+            } else {
+                alert(`O numero digitado é ${valor}. E é Impar`)
+            }
+        }
+
+    </script>
+</body>
+</html>

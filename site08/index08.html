@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios III</title>
+</head>
+<body>
+    <h1>10.-Programa que mostre dia da semana deacordo com nro digitado</h1>
+    <input type="number" name="valor" id="valor" placeholder="Digite um valor" onfocus="this.value=''">
+    <input type="button" value="Dia" onclick="diaDsemana()" >
+    <hr>
+    <h1>11.-Media do aluno</h1>
+    <input type="number" name="n1" id="n1" placeholder="Digite 1er valor" onfocus="this.value=''">
+    <input type="number" name="n2" id="n2" placeholder="Digite 2do valor" onfocus="this.value=''">
+    <input type="button" value="media" onclick="medParcial()" >
+    <hr>
+    <h1>12.-Triangulos</h1>
+    <input type="number" name="v1" id="v1" onfocus="this.value=''" placeholder="Digite valor lado 1">
+    <input type="number" name="v2" id="v2" onfocus="this.value=''" placeholder="Digite valor lado 2">
+    <input type="number" name="v3" id="v3" onfocus="this.value=''" placeholder="Digite valor lado 3">
+    <input type="button" value="triangulo" onclick="queTriangulo()">
+    <hr>
+    <h1>14.-Año bissexto</h1>
+    <input type="number" name="nr1" id="nr1" onfocus="this.value=''" placeholder="Digite um valor">
+    <input type="button" value="Ano" onclick="bissexto()">
+    <hr>
+    <h1>15.-Verificar se o formato dd/mm/aaaa esta correcto</h1>
+    <input type="number" name="d1" id="d1" onfocus="this.value=''" placeholder="Digite um valor para dia"><br>
+    <input type="number" name="m1" id="m1" onfocus="this.value=''" placeholder="Digite um valor para mes"><br>
+    <input type="number" name="a1" id="a1" onfocus="this.value=''" placeholder="Digite um valor para ano">
+    <input type="button" value="Verificar" onclick="dataValida()"><br>
+    Resposta = <div id="resp" style="display:inline"></div>
+    <hr>
+    <script>
+        function diaDsemana(){
+            var num = parseInt(document.getElementById('valor').value)
+            switch (num) {
+                case 1:
+                    alert("Domingo")
+                    break;
+                case 2:
+                    alert("Segunda")
+                    break;
+                case 3:
+                    alert("Terça")
+                    break;
+                case 4:
+                    alert("Quarta")
+                    break;
+                case 5:
+                    alert("Quinta")
+                    break;
+                case 6:
+                    alert("Sexta")
+                    break;
+                case 7:
+                    alert("Sabado")
+                    break;
+                default:
+                    alert("Valor Invalido")
+                    break;
+            }
+        }
+        function medParcial(){
+            var nota1 = parseFloat(document.getElementById('n1').value)
+            var nota2 = parseFloat(document.getElementById('n2').value)
+            var media = (nota1 + nota2)/2
+            if(media < 10.0 && media > 9.0){
+                var conceito = 'A'
+                var msg = "Aprovado"
+                alert(`- Primeira nota:  ${nota1}\n- Segunda nota: ${nota2}\n- Media: ${media}\n-Conceito: ${conceito}\n- ${msg}`) 
+            }else if(media < 9.0 && media > 7.5){
+                var conceito = 'B'
+                var msg = "Aprovado"
+                alert(`- Primeira nota:  ${nota1}\n- Segunda nota: ${nota2}\n- Media: ${media}\n-Conceito: ${conceito}\n- ${msg}`)
+            }else if(media < 7.5 && media > 6.0){
+                var conceito = 'C'
+                var msg = "Aprovado"
+                alert(`- Primeira nota:  ${nota1}\n- Segunda nota: ${nota2}\n- Media: ${media}\n-Conceito: ${conceito}\n- ${msg}`)
+            }else if(media < 6.0 && media > 4.0){
+                var conceito = 'D'
+                var msg = "Reprovado"
+                alert(`- Primeira nota:  ${nota1}\n- Segunda nota: ${nota2}\n- Media: ${media}\n-Conceito: ${conceito}\n- ${msg}`)
+            }else if(media > 0 && media < 4.0 ){
+                var conceito = '    e'
+                var msg = "Reprovado"
+                alert(`- Primeira nota:  ${nota1}\n- Segunda nota: ${nota2}\n- Media: ${media}\n-Conceito: ${conceito}\n- ${msg}`)
+            }
+        }
+        function queTriangulo(){
+            var lado1 = parseFloat(document.getElementById('v1').value)
+            var lado2 = parseFloat(document.getElementById('v2').value)
+            var lado3 = parseFloat(document.getElementById('v3').value)
+            if(lado1+lado2 > lado3 && lado1+lado3 > lado2 && lado2+lado3 > lado1) {
+                alert("Os tres lados formam um triangulo")
+                if(lado1 == lado2 && lado2 == lado3)
+                    alert("É um triangulo Equilatero")
+                else if(lado1 == lado2 || lado1 == lado3 || lado2 == lado3)
+                    alert("É um triangulo Isoceles")
+                else
+                    alert("É um triangulo Escaleno")
+            }else 
+                alert("Os tres lados NÃO formam um triangulo. Para que tres lados formem um triangulo a soma de dois lados quaisquer têm de ser maior que o terceiro")
+                
+        }
+        function bissexto(){
+            var ano = parseInt(document.getElementById('nr1').value)
+            if ((ano % 4 == 0 && ano % 100 !=0) || ano % 400 == 0 ) {
+                alert("Este é um ano bissexto")
+                
+            } else  
+                alert("Este NÃO é um ano bissexto ")
+        }
+        function dataValida(){
+            var dia = parseInt(document.getElementById('d1').value)
+            var mes = parseInt(document.getElementById('m1').value)
+            var ano = parseInt(document.getElementById('a1').value)
+            resposta = document.getElementById('resp')
+            switch (mes) {          
+                case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                    if (dia <= 31) {
+                        resposta.innerHTML="Data válida"
+                    } else 
+                        resposta.innerHTML="Invalido (mes com mais de 31 dias)"
+                    break
+                case 4: case 6: case 9: case 11:
+                    if (dia <= 30) {
+                        resposta.innerHTML="Data válida"
+                    } else
+                        resposta.innerHTML="Invalido (mes com mais de 30 dias)"
+                    break
+                case 2:
+                    if ((ano % 4 == 0 && ano % 100 != 0)||(ano % 400 == 0)) {
+                        if (dia <= 29) {
+                            resposta.innerHTML="Data válida"
+                        } else 
+                           resposta.innerHTML="Invalido (mes com mais de 29 dias)"
+                    } else if (dia <= 28) {
+                            resposta.innerHTML="Data válida"
+                        } else
+                            resposta.innerHTML="Invalido (mes com mais de 28 dias)"
+            }
+
+        }       
+    </script>
+</body>
+</html>
