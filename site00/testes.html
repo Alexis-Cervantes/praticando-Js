@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testes</title>
+</head>
+<body>
+    <h1>Testes</h1>
+    <input type="number" name="v" id="v" onfocus="this.value=''" placeholder="Digite um valor">
+    <input type="button" value="Testando" onclick="Testar()">
+    <div id="resp">Resultado:</div>
+    <hr>
+    <script>
+        function Testar(){
+            var valor = parseFloat(document.getElementById('v').value)
+            var r = parseFloat(document.getElementById('resp').value)
+            r.innerHtml = valor
+        }
+
+        //variaveis
+        var a = 4
+        var b = 7
+        var c = 1
+        var d = 2
+        //Operações
+        var totaldiv = a / b
+        var totalresto = a % b
+        var totalsoma = a + b
+        var totalsubst = a - b
+        var totalmult = a * b
+        var totalvar = a + b - c / d
+        //Mostrar resultados:
+        document.write("TESTES BASICOS DE OPERAÇÕES ARITMETICAS:<br>")
+        document.write("O total Divisão é: "+totaldiv+"<br>")
+        document.write("O total Resto Divisão é: "+totalresto+"<br>")
+        document.write("O total Soma é: "+totalsoma+"<br>")
+        document.write("O total Substração é: "+totalsubst+"<br>")
+        document.write("O total Multiplicação é: "+totalmult+"<br>")
+        document.write("O total Varias é: "+totalvar)
+    </script>
+</body>
+</html>

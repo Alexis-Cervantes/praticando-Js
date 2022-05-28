@@ -11,6 +11,24 @@
     <input type="number" name="num1" id="num1" onfocus="this.value=''" placeholder="Digite um valor enteiro">
     <input type="button" value="Par o Impar" onclick="determinar()">
     <hr>
+    <h1>17.-Ordem e Clase no Sistema decimal</h1>
+    <input type="number" name="alg" id="alg" onfocus="this.value=''" placeholder="Digite um numero"><i></i>
+    <input type="button" value="Determinar" onclick="ordemEclase()">
+    <hr>
+    <h1>18.-Caixa Eletronico</h1>
+    <input type="number" name="valor" id="valor" placeholder="Digite o valor a retirar" onfocus="this.value=''">
+    <input type="button" value="Saque" onclick="retirar()" >
+    <hr>
+    <h1>19.-Numero Inteiro ou Decimal</h1>
+    <input type="number" name="nro" id="nro" placeholder="Digite um valor" onfocus="this.value=''">
+    <input type="button" value="Verificar" onclick="intOuDec()">
+    <hr>
+    <h1>20.-Operações - par o impar / + o - / int o dec</h1>
+    <p>Menu:<br>1.-Soma<br>2.-Substração<br>3.-Multiplicação<br>4.-Divisão</p>
+    <input type="number" name="n1" id="n1" onfocus="this.value=''" placeholder="Digite primer valor">
+    <input type="number" name="n2" id="n2" onfocus="this.value=''" placeholder="Digite segundo valor">
+    <input type="button" value="Operações" onclick="operar()">
+    <hr>
     <script>
         function determinar(){
             var valor = parseInt(document.getElementById('num1').value)
@@ -19,6 +37,85 @@
             } else {
                 alert(`O numero digitado é ${valor}. E é Impar`)
             }
+        }
+        function ordemEclase(){
+            var numero = parseInt(document.getElementById('alg').value)
+            var u = numero % 10
+            var d = ((numero - u) / 10) % 10
+            var c = Math.trunc(((numero - u) / 10) / 10)
+            if (numero < 1000) {
+                alert("- O Número digitado foi: "+numero+"\n- Têm: "+u+" Unidade(s)"+"\n- têm: "+d+" Dezena(s)"+"\n- Têm: "+c+" Centena(s)")    
+            } else {
+                alert("Valor invalido")
+            }           
+        }
+        function retirar(){
+            var quantia = parseInt(document.getElementById('valor').value)
+            var notas_100, notas_50, notas_10, notas_5, notas_1
+            var resto = quantia
+            if (quantia >= 10 && quantia <= 600) {
+                notas_100 = Math.trunc(resto / 100)
+                resto %= 100
+                notas_50 = Math.trunc(resto / 50)
+                resto %= 50
+                notas_10 = Math.trunc(resto / 10)
+                resto %= 10
+                notas_5 = Math.trunc(resto / 5)
+                resto %= 5
+                notas_1 = Math.trunc(resto / 1)
+                resto %= 1
+                    
+                alert("A quantia de: "+quantia+" R$: \n"+notas_100+" notas de 100\n"+notas_50+" notas de 50\n"+notas_10+" notas de 10\n"+notas_5+" notas de 5\n"+notas_1+" notas de 1 ")
+            } else 
+                alert("Invalido")    
+        }
+        function intOuDec(){
+            var numero = parseFloat(document.getElementById('nro').value)
+            if (numero % 1 == 0) {
+                alert("O numero "+numero+" é um numero INTEIRO")
+            } else 
+                alert("O numero "+numero+" é um numero DECIMAL")
+        }
+        function operar(){
+            var valor1 = parseFloat(document.getElementById('n1').value)
+            var valor2 = parseFloat(document.getElementById('n2').value)
+            var op = prompt("Qual operação deseja realizar: 1.-soma 2.-substração 3.-multiplicação 4.-divisão")
+            var total
+            if(op >=1 && op <=4){
+                if (op == 1){ 
+                    total = valor1 + valor2
+                    if (total / 2 == 0) {
+                        alert("Você escolheu fazer uma SOMA:\nOs numeros informados são: "+valor1+" e "+valor2+"\nResultando: "+total+"\nEsse numero é Par")    
+                    } else {
+                        alert("Você escolheu fazer uma SOMA:\nOs numeros informados são: "+valor1+" e "+valor2+"\nResultando: "+total+"\nEsse numero é Impar")
+                    }
+                }else if (op == 2){
+                    total = valor1 - valor2
+                    if(total / 2 == 0){
+                        alert("Você escolheu fazer uma SUBSTRAÇÃO:\nOs numeros informados são: "+valor1+" e "+valor2+"\nResultando: "+total+"\nEsse numero é Par")
+                    }else{
+                        alert("Você escolheu fazer uma SUBSTRAÇÃO:\nOs numeros informados são: "+valor1+" e "+valor2+"\nResultando: "+total+"\nEsse numero é Impar")
+                    }
+                }else if(op == 3){
+                    total = valor1 * valor2
+                    if(total / 2 == 0){
+                        alert("Você escolheu fazer uma MULTIPLICAção:\nOs numeros informados são: "+valor1+" e "+valor2+"\nResultando: "+total+"\nEsse numero é Par")
+                    }else{
+                        alert("Você escolheu fazer uma MULTIPLICAção:\nOs numeros informados são: "+valor1+" e "+valor2+"\nResultando: "+total+"\nEsse numero é Impar")
+                    }
+                }else if(op == 4){
+                    total = valor1 / valor2
+                    if(total / 2 == 0){
+                        alert("Você escolheu fazer uma DIVISÃO:\nOs numeros informados são: "+valor1+" e "+valor2+"\nResultando: "+total+"\nEsse numero é Par")
+                    }else{
+                        alert("Você escolheu fazer uma DIVISÃO:\nOs numeros informados são: "+valor1+" e "+valor2+"\nResultando: "+total+"\nEsse numero é Impar")
+                    }
+                }
+           } else alert("Numero invalido") 
+               
+           
+           
+           
         }
 
     </script>
