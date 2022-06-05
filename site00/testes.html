@@ -14,31 +14,62 @@
     <hr>
     <script>
         function Testar(){
-            var valor = parseFloat(document.getElementById('v').value)
-            var r = parseFloat(document.getElementById('resp').value)
-            r.innerHtml = valor
+            var vl = document.getElementById('v')
+            var nr = Number(vl.value)
+            var r = document.getElementById('resp')
+            if(nr == 10){
+                //r.innerHTML = 'Entrou no 1ro IF'
+                document.write("Entrou no 1er If")
+                //confirm("Entrou no 1er If")
+            }
+            else if(nr < 10){
+                //r.innerHTML = 'Entrou no 2do IF'
+                document.write("Entrou no else If")
+                //confirm("Entrou no 2do If")
+            }
+            else {
+                //r.innerHTML = 'Entrou no 3ro IF'
+                document.write("Entrou no else")
+                //confirm("Entrou no 3er If")
+            }
         }
 
-        //variaveis
+
+        //Declarando Variaveis
         var a = 4
-        var b = 7
-        var c = 1
-        var d = 2
-        //Operações
-        var totaldiv = a / b
-        var totalresto = a % b
-        var totalsoma = a + b
-        var totalsubst = a - b
-        var totalmult = a * b
-        var totalvar = a + b - c / d
-        //Mostrar resultados:
+        var b = 3
+        var c = 2
+        var d = 1
+        var i = 1
+        //Declarando e Operando
+        var totalsoma = a + b //Adição
+        var totalsubst = b - c //Substração
+        var totalmult = c * d //Multiplicação
+        var totaldiv = a / c //Divisao
+        var totalresto = a % b //Resto da divisao
+        var totalvar = a + b - c / d //Varias
+        /* switch (i) {
+            case "1":
+                var primerResulatado = "Mostrando uma String 1"
+                alert(primerResulatado)
+                break;
+            case 1:
+                var segundoResultado = "Mostrando um numero 1"
+                alert(segundoResultado)
+                break;
+        
+            default:
+                break;
+        } */
+        //Mostrar Resultados:
         document.write("TESTES BASICOS DE OPERAÇÕES ARITMETICAS:<br>")
-        document.write("O total Divisão é: "+totaldiv+"<br>")
-        document.write("O total Resto Divisão é: "+totalresto+"<br>")
-        document.write("O total Soma é: "+totalsoma+"<br>")
-        document.write("O total Substração é: "+totalsubst+"<br>")
-        document.write("O total Multiplicação é: "+totalmult+"<br>")
-        document.write("O total Varias é: "+totalvar)
+        document.write("O total da Soma é: "+totalsoma+"<br>")
+        document.write("O total da Substração é: "+totalsubst+"<br>")
+        document.write("O total da Multiplicação é: "+totalmult+"<br>")
+        document.write("O total da Divisão é: "+totaldiv+"<br>")
+        document.write("O total do Resto Divisão é: "+totalresto+"<br>")
+        document.write("O total de Operações combinadas é: "+totalvar+"<br>")
+        
     </script>
 </body>
 </html>

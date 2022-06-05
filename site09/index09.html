@@ -24,9 +24,8 @@
     <input type="button" value="Verificar" onclick="intOuDec()">
     <hr>
     <h1>20.-Operações - par o impar / + o - / int o dec</h1>
-    <p>Menu:<br>1.-Soma<br>2.-Substração<br>3.-Multiplicação<br>4.-Divisão</p>
-    <input type="number" name="n1" id="n1" onfocus="this.value=''" placeholder="Digite primer valor">
-    <input type="number" name="n2" id="n2" onfocus="this.value=''" placeholder="Digite segundo valor">
+    <input type="number" name="n1" id="n1" onfocus="this.value=''" placeholder="Digite primer valor" required>
+    <input type="number" name="n2" id="n2" onfocus="this.value=''" placeholder="Digite segundo valor" required>
     <input type="button" value="Operações" onclick="operar()">
     <hr>
     <script>
@@ -77,45 +76,96 @@
                 alert("O numero "+numero+" é um numero DECIMAL")
         }
         function operar(){
-            var valor1 = parseFloat(document.getElementById('n1').value)
-            var valor2 = parseFloat(document.getElementById('n2').value)
-            var op = prompt("Qual operação deseja realizar: 1.-soma 2.-substração 3.-multiplicação 4.-divisão")
+            var valor1 = parseInt(document.getElementById('n1').value)
+            var valor2 = parseInt(document.getElementById('n2').value)
             var total
-            if(op >=1 && op <=4){
-                if (op == 1){ 
-                    total = valor1 + valor2
-                    if (total / 2 == 0) {
-                        alert("Você escolheu fazer uma SOMA:\nOs numeros informados são: "+valor1+" e "+valor2+"\nResultando: "+total+"\nEsse numero é Par")    
-                    } else {
-                        alert("Você escolheu fazer uma SOMA:\nOs numeros informados são: "+valor1+" e "+valor2+"\nResultando: "+total+"\nEsse numero é Impar")
-                    }
-                }else if (op == 2){
-                    total = valor1 - valor2
-                    if(total / 2 == 0){
-                        alert("Você escolheu fazer uma SUBSTRAÇÃO:\nOs numeros informados são: "+valor1+" e "+valor2+"\nResultando: "+total+"\nEsse numero é Par")
-                    }else{
-                        alert("Você escolheu fazer uma SUBSTRAÇÃO:\nOs numeros informados são: "+valor1+" e "+valor2+"\nResultando: "+total+"\nEsse numero é Impar")
-                    }
-                }else if(op == 3){
-                    total = valor1 * valor2
-                    if(total / 2 == 0){
-                        alert("Você escolheu fazer uma MULTIPLICAção:\nOs numeros informados são: "+valor1+" e "+valor2+"\nResultando: "+total+"\nEsse numero é Par")
-                    }else{
-                        alert("Você escolheu fazer uma MULTIPLICAção:\nOs numeros informados são: "+valor1+" e "+valor2+"\nResultando: "+total+"\nEsse numero é Impar")
-                    }
-                }else if(op == 4){
-                    total = valor1 / valor2
-                    if(total / 2 == 0){
-                        alert("Você escolheu fazer uma DIVISÃO:\nOs numeros informados são: "+valor1+" e "+valor2+"\nResultando: "+total+"\nEsse numero é Par")
-                    }else{
-                        alert("Você escolheu fazer uma DIVISÃO:\nOs numeros informados são: "+valor1+" e "+valor2+"\nResultando: "+total+"\nEsse numero é Impar")
-                    }
+            var impResultOperParImp, impResultOperPosNeg, impResultOperIntDec 
+            
+            var op = parseInt(prompt("Que Operação deseja realizar:\n1 - Adição\n2 - Substração\n3 - Multiplicação\n4 - Divisão"))
+            if(op >= 1 && op <= 4){
+                switch (op) {
+                    case 1:
+                        total = valor1 + valor2;
+                        if(total % 2 == 0){
+                            impResultOperParImp = "PAR"
+                        }else {
+                            impResultOperParImp = "IMPAR"
+                        }
+                        if(total > 0){
+                            impResultOperPosNeg = "POSITIVO"
+                        }else {
+                            impResultOperPosNeg = "NEGATIVO"
+                        }
+                        if(total % 1 == 0){
+                            impResultOperIntDec = "INTEIRO"
+                        }else {
+                            impResultOperIntDec = "DECIMAL"
+                        }
+                        alert(`O Resultado da ADIÇÃO é: ${total}\nÉ um numero ${impResultOperParImp}\nÉ um numero ${impResultOperPosNeg}\nÉ um numero ${impResultOperIntDec}`)    
+                            break;
+                    case 2:
+                        total = valor1 - valor2;
+                        if(total % 2 == 0){
+                            impResultOperParImp = "PAR"
+                        }else{
+                            impResultOperParImp = "IMPAR"
+                        }
+                        if(total >= 0){
+                        impResultOperPosNeg = "POSITIVO"
+                        }else{
+                            impResultOperPosNeg = "NEGATIVO"
+                        }
+                        if(total % 1 == 0){
+                            impResultOperIntDec = "INTEIRO"
+                        }else{
+                            impResultOperIntDec = "DECIMAL"
+                        }
+                        alert(`O Resultado da SUBSTRAÇÃO é: ${total}\nÉ um numero ${impResultOperParImp}\nÉ um numero ${impResultOperPosNeg}\nÉ um numero ${impResultOperIntDec}`)
+                            break;
+                    case 3:
+                        total = valor1 * valor2;
+                        if (total % 2 == 0) {
+                            impResultOperParImp = "PAR"
+                        } else {
+                            impResultOperParImp = "IMPAR"
+                        }
+                        if (total >= 0) {
+                            impResultOperPosNeg = "POSITIVO"
+                        } else {
+                            impResultOperPosNeg = "NEGATIVO"
+                        }
+                        if (total % 1 == 0) {
+                            impResultOperIntDec = "INTEIRO"
+                        } else {
+                            impResultOperIntDec = "DECIMAL"
+                        }
+                        alert(`O Resultado da MULTIPLICAÇÃO é: ${total}\nÉ um numero ${impResultOperParImp}\nÉ um numero ${impResultOperPosNeg}\nÉ um numero ${impResultOperIntDec}`)
+                            break;
+                    case 4:
+                        total = valor1 / valor2;
+                        if (total % 2 == 0) {
+                            impResultOperParImp = "PAR"
+                        } else {
+                            impResultOperParImp = "IMPAR"
+                        }
+                        if (total >= 0) {
+                            impResultOperPosNeg = "POSITIVO"
+                        } else {
+                            impResultOperPosNeg = "NEGATIVO"
+                        }
+                        if (total % 1 == 0) {
+                            impResultOperIntDec = "INTEIRO"
+                        } else {
+                            impResultOperIntDec = "DECIMAL"
+                        }
+                        alert(`O Resultado da DIVISÃO é: ${total}\nÉ um numero ${impResultOperParImp}\nÉ um numero ${impResultOperPosNeg}\nÉ um numero ${impResultOperIntDec}`)
+                            break;
+                    default:
+                            break;
                 }
-           } else alert("Numero invalido") 
-               
-           
-           
-           
+            }else {
+                alert("Numero invalido")
+            }
         }
 
     </script>
