@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios V</title>
+</head>
+<body>
+    <h1>22.-Posto Nossa Senhora Aparecida</h1>
+    <input type="number" name="qc" id="qc" placeholder="Digite quantidade combustivel" onfocus="this.value=''" required="required">
+    <input type="text" name="tc" id="tc" placeholder="Digite Tipo Combustivel" onfocus="this.value=''" required="required">
+    <input type="button" value="Procesando" onclick="procesar()">
+    <hr>
+    <script>
+        function procesar(){
+            var qcomb = parseInt(document.getElementById('qc').value)
+            var tcomb = (document.getElementById('tc').value).toLowerCase()
+            var total
+            var valc = 1.90
+            var vgas = 2.50
+            switch (tcomb) {
+                case 'a':
+                    if (qcomb <= 20) {
+                        total = (qcomb*valc) - ((qcomb*valc) * 0.03)
+                        alert(total)    
+                    } else if (qcomb > 20) {  
+                        total = (qcomb*valc) - ((qcomb*valc) * 0.05)
+                        alert(total)
+                    }
+                    break;
+            
+                case 'g':
+                if (qcomb <= 20) {
+                        total = (qcomb*vgas) - ((qcomb*vgas) * 0.04)
+                        alert(total)    
+                    } else if (qcomb > 20){  
+                        total = (qcomb*vgas) - ((qcomb*vgas) * 0.06)
+                        alert(total)
+                    }
+                    break;
+                default:
+                    alert("Valor invcalido! Digite A-Alcool ou G-Gasolina")
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
