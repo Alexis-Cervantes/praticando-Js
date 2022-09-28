@@ -12,37 +12,53 @@
     <input type="text" name="tc" id="tc" placeholder="Digite Tipo Combustivel" onfocus="this.value=''" required="required">
     <input type="button" value="Procesando" onclick="procesar()">
     <hr>
+    <h1>23.-Fruteria doña Cañona</h1>
+    <p>Morango: até 5Kgs R$ 2.50 por Kg || acima de 5 kgs R$ 2.20 por Kg<br>Maça: até 5kgs R$ 1.80 por Kg || acima de 5 kgs R$ 1.50 por Kg</p>
+    <input type="number" name="qmg" id="qmg" placeholder="Digite Quant em Kgs" onfocus="this.value=''">
+    <input type="text" name="tipo1" id="tipo1" placeholder="Digite tipo item" onfocus="this.value=''"><br><br>
+    <input type="number" name="qmz" id="qmz" placeholder="Digite quant em Kgs" onfocus="this.value=''">
+    <input type="text" name="tipo2" id="tipo2" placeholder="Digite tipo item" onfocus="this.value=''"><br><br>
+    <input type="button" value="Process" onclick="totalApagar()">
+    <hr>
     <script>
         function procesar(){
             var qcomb = parseInt(document.getElementById('qc').value)
             var tcomb = (document.getElementById('tc').value).toLowerCase()
-            var total
+            var totalValComb
             var valc = 1.90
             var vgas = 2.50
             switch (tcomb) {
                 case 'a':
                     if (qcomb <= 20) {
-                        total = (qcomb*valc) - ((qcomb*valc) * 0.03)
-                        alert(total)    
+                        totalValComb = (qcomb*valc) - ((qcomb*valc) * 0.03)
+                        alert(`O valor a pagar é: R$ ${totalValComb.toFixed(2)} reais`)    
                     } else if (qcomb > 20) {  
-                        total = (qcomb*valc) - ((qcomb*valc) * 0.05)
-                        alert(total)
+                        totalValComb = (qcomb*valc) - ((qcomb*valc) * 0.05)
+                        alert(`O valor a pagar é: R$ ${totalValComb.toFixed(2)} reais`)
                     }
                     break;
             
                 case 'g':
                 if (qcomb <= 20) {
-                        total = (qcomb*vgas) - ((qcomb*vgas) * 0.04)
-                        alert(total)    
+                        totalValComb = (qcomb*vgas) - ((qcomb*vgas) * 0.04)
+                        alert(`O valor a pagar é: R$ ${totalValComb.toFixed(2)} reais`)    
                     } else if (qcomb > 20){  
-                        total = (qcomb*vgas) - ((qcomb*vgas) * 0.06)
-                        alert(total)
+                        totalValComb = (qcomb*vgas) - ((qcomb*vgas) * 0.06)
+                        alert(`O valor a pagar é: R$ ${totalValComb.toFixed(2)} reais`)
                     }
                     break;
                 default:
-                    alert("Valor invcalido! Digite A-Alcool ou G-Gasolina")
+                    alert("Valor invalido! Digite A-alcool ou G-gasolina")
                     break;
             }
+        }
+        function totalApagar(){
+            var qmg = parseFloat(document.getElementById('qmg').value)
+            var mg = document.getElementById('tipo1').value
+            var qmz = parseFloat(document.getElementById('qmz').value)
+            var mz = document.getElementById('tipo2').value
+            var totalValFrut
+            
         }
     </script>
 </body>
